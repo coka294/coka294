@@ -1,15 +1,16 @@
 -- ServerScriptService -> Script
 
 -- Setările pentru notificare și ESP
-local fruitNotificationRange = 1000 -- În metri (sau orice unitate Roblox)
+local fruitNotificationRange = 1000 -- În metri (sau unități Roblox)
 local notificationColor = Color3.fromRGB(255, 165, 0) -- Portocaliu pentru notificare
 local highlightColor = Color3.fromRGB(0, 255, 0) -- Verde pentru evidențierea fructului
 
 -- Funcția pentru a adăuga highlight unui fruct
 local function addHighlightToFruit(fruit)
     -- Verifică dacă highlight-ul deja există
-    if fruit:FindFirstChild("Highlight") then return end
+    if fruit:FindFirstChild("FruitHighlight") then return end
 
+    -- Creează un obiect Highlight pentru fruct
     local highlight = Instance.new("Highlight")
     highlight.Name = "FruitHighlight"
     highlight.Adornee = fruit
